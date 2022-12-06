@@ -1,6 +1,6 @@
 import { api } from 'src/shared/api'
 
-const weatherUrl = process.env.WEATHER_API_URL || ''
+const weatherUrl = import.meta.env.VITE_WEATHER_API_URL
 
 export async function getLocationForecast(location: string) {
   try {

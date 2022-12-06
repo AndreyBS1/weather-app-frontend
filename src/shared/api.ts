@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const baseURL = process.env.BASE_API_URL
-const appid = process.env.API_KEY
-const geoCodeUrl = process.env.GEOCODE_API_URL || ''
+const baseURL = import.meta.env.VITE_BASE_API_URL
+const appid = import.meta.env.VITE_API_KEY
+const geoCodeUrl = import.meta.env.VITE_GEOCODE_API_URL
 
 const baseRequest = axios.create({
   baseURL,
