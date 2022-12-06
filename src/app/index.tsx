@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import { MainPage } from 'src/pages/main'
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>Wheather App</div>,
+    element: <MainPage />,
   },
 ])
 
