@@ -4,13 +4,13 @@ const baseURL = process.env.REACT_APP_BASE_API_URL
 const appid = process.env.REACT_APP_API_KEY
 const geoCodeUrl = process.env.REACT_APP_GEOCODE_API_URL || ''
 
-export const baseRequest = axios.create({
+const baseRequest = axios.create({
   baseURL,
   timeout: 2500,
   params: { appid },
 })
 
-export async function getLocationCoordinates(location: string) {
+async function getLocationGeoData(location: string) {
   try {
     const { data } = await baseRequest.get(geoCodeUrl, {
       params: { q: location, limit: 1 },
@@ -21,7 +21,7 @@ export async function getLocationCoordinates(location: string) {
   }
 }
 
-export function handleRequestError(error: any) {
+function handleRequestError(error: any) {
   console.group('Request error')
   if (error.response) {
     console.log('data:', error.response.data)
@@ -35,3 +35,5 @@ export function handleRequestError(error: any) {
   console.log('config:', error.config)
   console.groupEnd()
 }
+
+export const api = { baseRequest, getLocationGeoData, handleRequestError }
