@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const baseURL = process.env.REACT_APP_BASE_API_URL
-const appid = process.env.REACT_APP_API_KEY
-const geoCodeUrl = process.env.REACT_APP_GEOCODE_API_URL || ''
+const baseURL = process.env.BASE_API_URL
+const appid = process.env.API_KEY
+const geoCodeUrl = process.env.GEOCODE_API_URL || ''
 
 const baseRequest = axios.create({
   baseURL,
