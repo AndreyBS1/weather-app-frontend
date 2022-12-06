@@ -8,10 +8,9 @@ import { getLocationForecast } from '../api'
 const weather: any[] = []
 
 export function Page() {
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault()
-    console.log('value:', event.target.value)
-    const forecast = getLocationForecast(event.target.value)
+    const forecast = await getLocationForecast('Москва')
     console.log('forecast:', forecast)
   }
 

@@ -15,7 +15,7 @@ async function getLocationGeoData(location: string) {
     const { data } = await baseRequest.get(geoCodeUrl, {
       params: { q: location, limit: 1 },
     })
-    return data
+    return data[0]
   } catch (error: any) {
     throw error
   }
