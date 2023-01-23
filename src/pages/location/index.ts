@@ -1,1 +1,1 @@
-export * from './ui'
+export { Page as LocationPage } from './ui'
