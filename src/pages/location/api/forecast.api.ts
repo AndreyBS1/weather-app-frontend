@@ -20,5 +20,6 @@ export async function getLocationForecast(location: string) {
     return forecastByCurrentHour
   } catch (error) {
     api.handleRequestError(error)
+    return null
   }
 }
